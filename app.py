@@ -67,9 +67,9 @@ molecules = {
 "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O"
 },
 "Glucose": {
-"formula": "C6H12O6",
-"weight": "180.16 g/mol",
-"smiles": "C([C@@H]1"C@H" ([C@@H]([C@H](C(O1)O)O)O)O)O"
+    "formula": "C6H12O6",
+    "weight": "180.16 g/mol",
+    "smiles": "C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O"
 },
 "Benzene": {
 "formula": "C6H6",
