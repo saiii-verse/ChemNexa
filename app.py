@@ -69,22 +69,26 @@ DRUGS = [
 ]
 
 def get_pubchem_data(name):
-url = (
-"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
-f"name/{requests.utils.quote(name)}/property/"
-"MolecularFormula,MolecularWeight,CanonicalSMILES,"
-"IUPACName/JSON"
-)
-response = requests.get(url, timeout=15)
-response.raise_for_status()
-data = response.json()
-return data["PropertyTable"]["Properties"][0]
+    url = (
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
+        f"name/{requests.utils.quote(name)}/property/"
+        "MolecularFormula,MolecularWeight,CanonicalSMILES,"
+        "IUPACName/JSON"
+    )
+    try:
+        response = requests.get(url, timeout=15)
+        response.raise_for_status()
+        data = response.json()
+        return data["PropertyTable"]["Properties"][0]
+    except Exception:
+        return None
+
 
 def get_structure_image(name):
-return (
-"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
-f"name/{requests.utils.quote(name)}/PNG"
-)
+    return (
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/"
+        f"name/{requests.utils.quote(name)}/PNG"
+    )
 
 st.sidebar.markdown("# 🧪 ChemNexa")
 st.sidebar.caption("MOLECULAR DISCOVERY PLATFORM")
