@@ -390,7 +390,7 @@ elif page == "📚 Chemistry Library":
 
 # -------------------- ABOUT --------------------
 elif page == "✨ About ChemNexa":
-    st.markdown(
+    st.markdown()
         '<div class="hero"><div style="font-size:45px;">🌸 🧬 🌸</div>'
         '<div class="hero-title">About ChemNexa</div>'
         '<div class="hero-subtitle">Explore Molecules. Discover Chemistry.</div></div>',
@@ -402,7 +402,19 @@ elif page == "✨ About ChemNexa":
         ("🌐", "Data Source", "Molecular information and structure images are retrieved from PubChem when available."),
         ("💗", "Designed for Learning", "A pastel peach and pink interface brings chemistry, discovery, and an aesthetic user experience together."),
     ]
-    for icon, title, description in about_cards:
+        for icon, title, description in about_cards:
         st.markdown(
-            f'<div class="glass-card"><div class="card-icon">{icon}</div>'
+            f'<div class="glass-card">'
+            f'<div class="card-icon">{icon}</div>'
             f'<div class="card-title">{title}</div>'
+            f'<div class="card-text">{description}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    st.markdown(
+        '<div class="footer">'
+        'Made with 💗 using Streamlit | ChemNexa'
+        '</div>',
+        unsafe_allow_html=True,
+    )
