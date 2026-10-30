@@ -405,4 +405,4 @@ elif page == "✨ About ChemNexa":
     for icon, title, description in about_cards:
         st.markdown(
             f'<div class="glass-card"><div class="card-icon">{icon}</div>'
-            f'<div class="card-title">{title}</di
+            f'<div class="card-title">{title}</div>'
